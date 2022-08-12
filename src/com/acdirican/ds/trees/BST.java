@@ -100,5 +100,55 @@ public class BST<T extends Comparable<T>> extends BinaryTree<T> {
 		
 		return 1 + Math.max(l, r);
 	}
+
+	@Override
+	public Range<T> findRange(T data) {
+		if (root == null) {
+			return null;
+		}
+		return findRange(root, data);
+	}
+
+	private Range<T> findRange(BTNode<T> current, T data) {
+		if (current ==  null) {
+			return null;
+		}
+		
+		Range<T> result = null;
+		
+		if (data.compareTo(current.data) == 0) {
+			result =  new Range<T>(data, data);
+		}
+		else if (data.compareTo(current.data) < 0 ) {
+			result =  findRange(current.left, data);
+			if (result == null) {//it's a leaf, then current is an upper bound
+				T val = (current.left != null ? current.left.data : null);
+				result =  new Range<T>(val, current.data);
+			}
+			else {
+				if (result.getMax() ==  null) { //it comes from the right side
+					if (data.compareTo(current.data) < 0 ) {
+						result.setMax(current.data);
+					}
+				}
+			}
+		}
+		else {
+			result = findRange(current.right, data);
+			if (result == null) { //it is a leaf, then current is lower  bound
+				T val = (current.right != null ? current.right.data : null);
+				result =  new Range<T>(current.data, val);
+			}
+			else {
+				if (result.getMin() ==  null) { //it comes from the left side
+					if (data.compareTo(current.data) > 0 ) {
+						result.setMin(current.data);
+					}
+				}
+			}
+		}
+		return result;
+				
+	}
 	
 }

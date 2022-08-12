@@ -1,6 +1,7 @@
 package com.acdirican.ds.trees;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -48,6 +49,22 @@ public class BTTest {
 		Arrays.sort(testData);
 		String expected = Arrays.stream(testData).boxed().map(String::valueOf).collect(Collectors.joining(", "));
 		assertEquals(expected, bt.toString());
+	}
+	
+	@Test
+	void testFindRange() {
+		new BTPrinter<>(bt).printPreOrder();
+		//7, 8, 10, 20, 22, 25, 30, 32, 42, 43, 60, 79, 80, 90
+		assertEquals(new Range<Integer>(8,8), bt.findRange(8));
+		assertEquals(new Range<Integer>(8,10), bt.findRange(9));
+		assertEquals(new Range<Integer>(10,20), bt.findRange(15));
+		
+		assertEquals(new Range<Integer>(32,42), bt.findRange(35));
+		assertEquals(new Range<Integer>(60,79), bt.findRange(65));
+		assertEquals(new Range<Integer>(80,90), bt.findRange(85));
+		
+		assertEquals(new Range<Integer>(null,7), bt.findRange(6));
+		assertEquals(new Range<Integer>(90,null), bt.findRange(100));
 	}
 
 }

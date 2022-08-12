@@ -1,7 +1,5 @@
 package com.acdirican.ds.trees;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.BeforeEach;
 
 

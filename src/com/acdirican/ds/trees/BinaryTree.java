@@ -17,5 +17,18 @@ public abstract class BinaryTree<T extends Comparable<T>> {
 	public abstract void remove(T data);
 	public abstract boolean contains(T data);
 	public abstract int getHeight();
+	/**
+	 * Return the range where the given data is in. 
+	 * 
+	 * If the data is already in the tree the method returns a range whose min and max are the same,
+	 *, otherwisit returns the narrower range possible. 
+	 * 
+	 * If the given data smaller or bigger than all the data in the tree, the method returns 
+	 * either of the range {min=null, max=first_value} or {min=last value, max=null}
+	 * 
+	 * @param data the given data
+	 * @return the narrower range of the given data
+	 */
+	public abstract Range<T> findRange(T data);
 	
 }
