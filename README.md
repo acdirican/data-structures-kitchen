@@ -1,8 +1,10 @@
 # Implementation of Data Structures
 
-Data Structures is a crucial topics for computer science and engineering. In this project, I present the implmentations of several important data stuructures in JAVA. 
+Data Structures is a crucial topics for computer science and engineering. It is the first step of problem solving and high perforamance computing.  
 
-Implementations does not only include the bare coding of the required algorithms but also required class hierarchies and several interesting methods, including printing, toString, range finding, etc.
+In this project, I present the implmentations of several important data stuructures in JAVA. 
+
+Implementations does not only include the bare coding of the required algorithms but also  nice class hierarchies, test classes and several interesting methods, including printing, toString, range finding, etc.
 
 <b>Implemented Data Stuructre</b>
 <ul>
