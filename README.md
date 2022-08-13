@@ -13,11 +13,19 @@ Implementations does not only include the bare coding of the required algorithms
     <ul>
       <li>Binary Search Tree</li>
       <li>AVL Tree</li>
+      <br>
+      Coming soon..
       <li>Red Black Tree</li>
       <li>B-Tree</li>
     </ul>
   </li>
-  
+  <li>
+    <h3>Heaps</h3>
+    <ul>
+      <li>Binary Min Heap</li>
+      <li>Binary Max Heap</li>
+    </ul>
+  </li>
 </ul>
 
 
