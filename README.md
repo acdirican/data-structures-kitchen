@@ -1,4 +1,4 @@
-# Implementation of Data Structures
+# Data Structures Kitchen 
 
 Data Structures is a crucial topics for computer science and engineering. It is the first step of problem solving and high perforamance computing.  
 
@@ -40,6 +40,23 @@ Implementations does not only include the bare coding of the required algorithms
     <ul>
       <li>Binary Min Heap</li>
       <li>Binary Max Heap</li>
+    </ul>
+  </li>
+ 
+  <li>
+    <h3>Lists</h3>
+    <ul>
+      <li>
+         <h3>Linked List</h3>
+         <ul>
+           <li>Singly Linked List</li>
+           <li>Doubly Linked List</li>
+           <li>Circular Linked List</li>
+           <li>Binary Max Heap</li>
+         </ul>
+       </li>
+      <li>Queue</li>
+      <li>Stack</li>
     </ul>
   </li>
 </ul>
