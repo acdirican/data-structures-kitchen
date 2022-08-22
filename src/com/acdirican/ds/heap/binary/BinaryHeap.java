@@ -1,7 +1,5 @@
 package com.acdirican.ds.heap.binary;
 
-import java.util.StringJoiner;
-
 /*
  * A Binary Heap is a Complete Binary Tree. A binary heap is typically represented as an array.
 
@@ -51,8 +49,13 @@ public abstract class BinaryHeap<T extends Comparable<T>> {
 		return heap[i].data;
 	}
 	
+	public boolean isEmpty() {
+		return size == 0;
+	}
+	
 	public abstract String toStringSorted();
 	public abstract void add(T data);
 	public abstract void heapify();
+	
 	
 }

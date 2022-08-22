@@ -17,6 +17,10 @@ public abstract class BinaryTree<T extends Comparable<T>> {
 	public abstract void remove(T data);
 	public abstract boolean contains(T data);
 	public abstract int getHeight();
+	public abstract int getWidth();
+	public abstract int getWidthUsingQueue();
+	public abstract int getGidthWithNullLeaves();
+	public abstract T findKthLargest(int k);
 	/**
 	 * Return the range where the given data is in. 
 	 * 

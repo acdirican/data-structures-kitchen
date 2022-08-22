@@ -1,5 +1,11 @@
 package com.acdirican.ds.trees;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+
+
 public class BTPrinter<T extends Comparable<T>> {
 	private BinaryTree<T> bt;
 
@@ -8,6 +14,18 @@ public class BTPrinter<T extends Comparable<T>> {
 		this.bt = bt;
 	}
 	
+	public void printMidOrderReverse() {
+		printMidOrderReverse(bt.getRoot());
+		System.out.println();
+	}
+	private void printMidOrderReverse(BTNode<T> current) {
+		if (current == null) {
+			return;
+		}
+		printMidOrderReverse(current.right);
+		System.out.print(current.data + " ");
+		printMidOrderReverse(current.left);
+	}
 	public void printMidOrder() {
 		printMidOrder(bt.getRoot());
 		System.out.println();
@@ -66,6 +84,44 @@ public class BTPrinter<T extends Comparable<T>> {
 			printLevelOrder(current.right, d-1);
 		}
 		
+	}
+	
+	public void printBFS() {
+		Queue<BTNode<T>> q =  new LinkedList<>();
+		q.add(bt.root);
+		while(!q.isEmpty()) {
+			BTNode<T> curr = q.poll();
+			System.out.print(curr.getData() +" ");
+			if (curr.left!=null) {
+				q.add(curr.left);
+			}
+			if (curr.right!=null) {
+				q.add(curr.right);
+			}
+		}
+		System.out.println();
+	}
+	
+	public void printLevelOrderQueue() {
+		Queue<BTNode<T>> q =  new LinkedList<>();
+		q.add(bt.root);
+
+		while(!q.isEmpty()) {
+			int count = q.size();
+			
+			for(int i=0; i< count; i++) {
+				BTNode<T> curr = q.poll();
+				System.out.print(curr.getData() +" ");
+				if (curr.left!=null) {
+					q.add(curr.left);
+				}
+				if (curr.right!=null) {
+					q.add(curr.right);
+				}
+			}
+			
+		}
+		System.out.println();
 	}
 	
 }
